@@ -749,10 +749,6 @@ paths:
                       - name_taken
                       - restricted_action
                       - team_not_found
-                      - invalid_team
-                      - invalid_name
-                      - could_not_create_channel
-                      - team_id_or_org_required
                     type: string
                   ok:
                     $ref: "#/components/schemas/defs_ok_false"
