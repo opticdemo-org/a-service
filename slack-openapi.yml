@@ -20100,11 +20100,6 @@ components:
                 type: number
             required:
               - id
-              - name
-              - profile
-              - is_bot
-              - updated
-              - is_app_user
             type: object
     objs_user_profile:
       additionalProperties: false
