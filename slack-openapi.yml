@@ -227,6 +227,7 @@ paths:
             type: integer
         - description: Set `cursor` to `next_cursor` returned by the previous call to list items in the next page
           in: query
+          required: true
           name: cursor
           schema:
             type: string
