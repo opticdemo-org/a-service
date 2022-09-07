@@ -106,7 +106,7 @@ paths:
         - description: "Authentication token. Requires scope: `admin.apps:read`"
           in: query
           name: token
-          required: true
+          required: false
           schema:
             type: string
         - description: The maximum number of items to return. Must be between 1 - 1000 both inclusive.
