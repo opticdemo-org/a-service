@@ -340,6 +340,9 @@ paths:
         content:
           application/x-www-form-urlencoded:
             schema:
+              required: 
+                - app_id
+                - request_id
               properties:
                 app_id:
                   description: The id of the app to restrict.
@@ -17106,14 +17109,14 @@ paths:
         - description: "Authentication token. Requires scope: `users.profile:read`"
           in: query
           name: token
-          required: true
+          required: false
           schema:
             type: string
         - description: Include labels for each ID in custom profile fields
           in: query
           name: include_labels
           schema:
-            type: boolean
+            type: string
         - description: User to retrieve profile info for
           in: query
           name: user
