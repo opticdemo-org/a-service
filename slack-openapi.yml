@@ -405,7 +405,7 @@ paths:
         - description: "Authentication token. Requires scope: `admin.apps:read`"
           in: query
           name: token
-          required: true
+          required: false
           schema:
             type: string
         - description: The maximum number of items to return. Must be between 1 - 1000 both inclusive.
@@ -424,6 +424,7 @@ paths:
             type: string
         - in: query
           name: enterprise_id
+          required: true
           schema:
             type: string
       responses:
@@ -1783,9 +1784,7 @@ paths:
                 prefs:
                   description: The prefs for this channel in a stringified JSON format.
                   type: string
-              required:
-                - channel_id
-                - prefs
+              required: []
               type: object
         required: true
       responses:
@@ -3327,6 +3326,7 @@ paths:
         content:
           application/x-www-form-urlencoded:
             schema:
+              required: ["token"]
               properties:
                 image_url:
                   description: Image URL for the icon
