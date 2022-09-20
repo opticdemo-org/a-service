@@ -12338,10 +12338,12 @@ paths:
         - description: Issued when you created your application.
           in: query
           name: client_id
+          required: true
           schema:
             type: string
         - description: Issued when you created your application.
           in: query
+          required: true
           name: client_secret
           schema:
             type: string
@@ -18868,11 +18870,10 @@ components:
               - is_general
               - is_mpim
               - is_group
-              - is_org_shared
-              - is_im
               - is_shared
               - is_private
               - name_normalized
+              - user
               - topic
               - purpose
             title: Conversation object
