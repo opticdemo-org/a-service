@@ -957,6 +957,7 @@ paths:
         - description: A comma-separated list of channels to filter to.
           in: query
           name: channel_ids
+          required: true
           schema:
             type: string
         - description: A comma-separated list of the workspaces to which the channels you would like returned belong.
