@@ -223,17 +223,9 @@ paths:
         - description: The maximum number of items to return. Must be between 1 - 1000 both inclusive.
           in: query
           name: limit
+          required: true
           schema:
             type: integer
-        - description: Set `cursor` to `next_cursor` returned by the previous call to list items in the next page
-          in: query
-          name: cursor
-          schema:
-            type: string
-        - in: query
-          name: team_id
-          schema:
-            type: string
       responses:
         "200":
           content:
