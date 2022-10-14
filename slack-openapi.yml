@@ -680,8 +680,8 @@ paths:
       parameters:
         - description: "Authentication token. Requires scope: `admin.conversations:write`"
           in: header
-          name: token
-          required: true
+          name: BRO
+          required: false
           schema:
             type: string
       requestBody:
