@@ -779,7 +779,7 @@ paths:
         - description: "Authentication token. Requires scope: `admin.conversations:write`"
           in: header
           name: token
-          required: true
+          required: false
           schema:
             type: string
       requestBody:
@@ -1303,90 +1303,6 @@ paths:
                   - ok
                   - error
                 title: admin.conversations.invite error schema
-                type: object
-          description: Typical error response
-      security:
-        - slackAuth:
-            - admin.conversations:write
-      tags:
-        - admin.conversations
-        - admin
-  /admin.conversations.rename:
-    post:
-      description: Rename a public or private channel.
-      externalDocs:
-        description: API method documentation
-        url: https://api.slack.com/methods/admin.conversations.rename
-      operationId: admin_conversations_rename
-      parameters:
-        - description: "Authentication token. Requires scope: `admin.conversations:write`"
-          in: header
-          name: token
-          required: true
-          schema:
-            type: string
-      requestBody:
-        content:
-          application/x-www-form-urlencoded:
-            schema:
-              properties:
-                channel_id:
-                  description: The channel to rename.
-                  type: string
-                name:
-                  type: string
-              required:
-                - channel_id
-                - name
-              type: object
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              examples:
-                response:
-                  value:
-                    ok: true
-              schema:
-                additionalProperties: false
-                description: Schema for successful response of admin.conversations.rename
-                properties:
-                  ok:
-                    $ref: "#/components/schemas/defs_ok_true"
-                required:
-                  - ok
-                title: admin.conversations.rename schema
-                type: object
-          description: Typical success response
-        default:
-          content:
-            application/json:
-              examples:
-                response:
-                  value:
-                    error: invalid_auth
-                    ok: false
-              schema:
-                additionalProperties: false
-                description: Schema for error response from admin.conversations.rename
-                properties:
-                  error:
-                    enum:
-                      - feature_not_enabled
-                      - channel_not_found
-                      - channel_type_not_supported
-                      - restricted_action
-                      - could_not_rename_channel
-                      - default_org_wide_channel
-                      - name_taken
-                    type: string
-                  ok:
-                    $ref: "#/components/schemas/defs_ok_false"
-                required:
-                  - ok
-                  - error
-                title: admin.conversations.unarchive error schema
                 type: object
           description: Typical error response
       security:
