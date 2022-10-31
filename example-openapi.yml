@@ -776,10 +776,8 @@ paths:
         url: https://api.slack.com/methods/admin.conversations.delete
       operationId: admin_conversations_delete
       parameters:
-        - description: "Authentication token. Requires scope: `admin.conversations:write`"
-          in: header
+        - in: header
           name: token
-          required: true
           schema:
             type: string
       requestBody:
@@ -1312,7 +1310,7 @@ paths:
         - admin.conversations
         - admin
   /admin.conversations.rename:
-    post:
+    patch:
       description: Rename a public or private channel.
       externalDocs:
         description: API method documentation
