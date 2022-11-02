@@ -11022,21 +11022,6 @@ paths:
         url: https://api.slack.com/methods/files.list
       operationId: files_list
       parameters:
-        - description: "Authentication token. Requires scope: `files:read`"
-          in: query
-          name: token
-          schema:
-            type: string
-        - description: Filter files created by a single user.
-          in: query
-          name: user
-          schema:
-            type: string
-        - description: Filter files appearing in a specific channel, indicated by its ID.
-          in: query
-          name: channel
-          schema:
-            type: string
         - description: Filter files created after this timestamp (inclusive).
           in: query
           name: ts_from
