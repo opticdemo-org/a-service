@@ -12957,58 +12957,6 @@ paths:
                     type: file
               schema:
                 description: Schema for successful response from reactions.get method
-                items:
-                  anyOf:
-                    - additionalProperties: false
-                      properties:
-                        channel:
-                          $ref: "#/components/schemas/defs_channel"
-                        message:
-                          $ref: "#/components/schemas/objs_message"
-                        ok:
-                          $ref: "#/components/schemas/defs_ok_true"
-                        type:
-                          enum:
-                            - message
-                          type: string
-                      required:
-                        - ok
-                        - type
-                        - channel
-                        - message
-                    - additionalProperties: false
-                      properties:
-                        file:
-                          $ref: "#/components/schemas/objs_file"
-                        ok:
-                          $ref: "#/components/schemas/defs_ok_true"
-                        type:
-                          enum:
-                            - file
-                          type: string
-                      required:
-                        - ok
-                        - type
-                        - file
-                    - additionalProperties: false
-                      properties:
-                        comment:
-                          $ref: "#/components/schemas/objs_comment"
-                        file:
-                          $ref: "#/components/schemas/objs_file"
-                        ok:
-                          $ref: "#/components/schemas/defs_ok_true"
-                        type:
-                          enum:
-                            - file_comment
-                          type: string
-                      required:
-                        - ok
-                        - type
-                        - file
-                        - comment
-                title: reactions.get success schema
-                type: object
           description: Typical success response
         default:
           content:
@@ -20135,10 +20083,6 @@ components:
           items:
             type: object
           nullable: true
-          oneOf:
-            - type: object
-            - items: {}
-              type: array
         first_name:
           nullable: true
           type: string
