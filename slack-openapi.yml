@@ -408,22 +408,28 @@ paths:
           required: true
           schema:
             type: string
-        - description: The maximum number of items to return. Must be between 1 - 1000 both inclusive.
-          in: query
+        - in: query
           name: limit
           schema:
             type: integer
+        - description: sorting order
+          in: query
+          name: sort
+          schema:
+            type: string
+            enum: ["ASC", "DSC"]
         - description: Set `cursor` to `next_cursor` returned by the previous call to list items in the next page
           in: query
           name: cursor
-          schema:
-            type: string
-        - in: query
-          name: team_id
+          required: true
           schema:
             type: string
         - in: query
           name: enterprise_id
+          schema:
+            type: string    
+        - in: query
+          name: team_id
           schema:
             type: string
       responses:
@@ -12951,58 +12957,6 @@ paths:
                     type: file
               schema:
                 description: Schema for successful response from reactions.get method
-                items:
-                  anyOf:
-                    - additionalProperties: false
-                      properties:
-                        channel:
-                          $ref: "#/components/schemas/defs_channel"
-                        message:
-                          $ref: "#/components/schemas/objs_message"
-                        ok:
-                          $ref: "#/components/schemas/defs_ok_true"
-                        type:
-                          enum:
-                            - message
-                          type: string
-                      required:
-                        - ok
-                        - type
-                        - channel
-                        - message
-                    - additionalProperties: false
-                      properties:
-                        file:
-                          $ref: "#/components/schemas/objs_file"
-                        ok:
-                          $ref: "#/components/schemas/defs_ok_true"
-                        type:
-                          enum:
-                            - file
-                          type: string
-                      required:
-                        - ok
-                        - type
-                        - file
-                    - additionalProperties: false
-                      properties:
-                        comment:
-                          $ref: "#/components/schemas/objs_comment"
-                        file:
-                          $ref: "#/components/schemas/objs_file"
-                        ok:
-                          $ref: "#/components/schemas/defs_ok_true"
-                        type:
-                          enum:
-                            - file_comment
-                          type: string
-                      required:
-                        - ok
-                        - type
-                        - file
-                        - comment
-                title: reactions.get success schema
-                type: object
           description: Typical success response
         default:
           content:
@@ -13309,6 +13263,7 @@ paths:
                   type: string
               required:
                 - name
+                - channel
               type: object
         required: true
       responses:
@@ -20128,10 +20083,6 @@ components:
           items:
             type: object
           nullable: true
-          oneOf:
-            - type: object
-            - items: {}
-              type: array
         first_name:
           nullable: true
           type: string
