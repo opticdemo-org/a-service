@@ -16315,6 +16315,7 @@ paths:
                     type: boolean
                   manualOutOfOffice:
                     type: boolean
+                    description: out of office set by user
                   ok:
                     $ref: "#/components/schemas/defs_ok_true"
                   online:
