@@ -1425,10 +1425,6 @@ paths:
                 token:
                   description: "Authentication token. Requires scope: `admin.conversations:write`"
                   type: string
-              required:
-                - token
-                - group_id
-                - channel_id
               type: object
         required: true
       responses:
