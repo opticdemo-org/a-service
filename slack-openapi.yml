@@ -1533,12 +1533,12 @@ paths:
         - description: "Authentication token. Requires scope: `admin.conversations:read`"
           in: query
           name: token
-          required: true
+          required: false
           schema:
             type: string
         - in: query
           name: channel_id
-          required: true
+          required: false
           schema:
             type: string
         - description: The workspace where the channel exists. This argument is required
@@ -1546,6 +1546,7 @@ paths:
             that are shared across an organization.
           in: query
           name: team_id
+          required: true
           schema:
             type: string
       responses:
@@ -1627,8 +1628,6 @@ paths:
               required:
                 - token
                 - team_id
-                - group_id
-                - channel_id
               type: object
         required: true
       responses:
@@ -2191,7 +2190,6 @@ paths:
               required:
                 - token
                 - name
-                - alias_for
               type: object
         required: true
       responses:
@@ -2260,12 +2258,6 @@ paths:
           name: cursor
           schema:
             type: string
-        - description: The maximum number of items to return. Must be between 1 - 1000
-            both inclusive.
-          in: query
-          name: limit
-          schema:
-            type: integer
       responses:
         "200":
           content:
