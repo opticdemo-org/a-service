@@ -1,5 +1,5 @@
 openapi: 3.0.0
-x-optic-url: "https://app.useoptic.com/organizations/61d22cd6-d47c-478f-885d-677f8a89449f/apis/_rObzCmVzCDy0glqxhtpP"
+x-optic-url: "https://app.useoptic.com/organizations/61d22cd6-d47c-478f-885d-677f8a89449f/apis/aSqUDj9GTPOvcfjkEPRhA"
 servers:
   - url: https://slack.com/api
 info:
