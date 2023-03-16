@@ -556,8 +556,6 @@ paths:
                 channel_id:
                   description: The channel to archive.
                   type: string
-              required:
-                - channel_id
               type: object
         required: true
       responses:
