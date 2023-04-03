@@ -2494,7 +2494,7 @@ paths:
         - description: "Authentication token. Requires scope: `admin.invites:write`"
           in: header
           name: token
-          required: true
+          required: false
           schema:
             type: string
       requestBody:
@@ -2789,6 +2789,7 @@ paths:
         - description: The number of results that will be returned by the API on each
             invocation. Must be between 1 - 1000, both inclusive
           in: query
+          required: true
           name: limit
           schema:
             type: integer
